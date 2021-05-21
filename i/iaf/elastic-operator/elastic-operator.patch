@@ -1,0 +1,22 @@
+diff --git a/internal/elasticsearch/models/v1m0p0/elasticsearch_model.go b/internal/elasticsearch/models/v1m0p0/elasticsearch_model.go
+index 505f87e..89e25d5 100644
+--- a/internal/elasticsearch/models/v1m0p0/elasticsearch_model.go
++++ b/internal/elasticsearch/models/v1m0p0/elasticsearch_model.go
+@@ -779,7 +779,7 @@ func (m *ModelImpl) createMetricsExporter() {
+        allowPrivilegeEscalation := false
+
+        var archList = []string{
+-               "amd64",
++               "amd64","ppc64le",
+        }
+
+        var affinity *corev1.Affinity
+@@ -1338,7 +1338,7 @@ func createMeteringAnnotations() map[string]string {
+ func createPodSpec(m *ModelImpl, nodeGroupSpec elasticv1beta1.NodeGroupSpec) *corev1.PodSpec {
+
+        var archList = []string{
+-               "amd64",
++               "amd64","ppc64le",
+        }
+
+        var affinity *corev1.Affinity
